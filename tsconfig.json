@@ -1,0 +1,30 @@
+{  /*  opções de copilador */
+    "compilerOptions":{
+        "target": "es5",  // a compilação para o js//
+        "module": "commonjs",
+        "outDir": "build", //pasta de arquivos transcritos//
+        "typeRoots": [
+            "../node_modules/@types"
+        ], //arquivos roots//
+        "types": [
+            "node"  //tipo do projeto//
+        ]
+    },
+    "include": [
+        "server/**/*.ts1", //pastas e sub pastas que seram transcritos//
+        "server/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": true
+
+}
+
+/* assim que chamar essa conversão do ts, seguir os comandos dentro do terminal: 
+
+1-  npm install express
+2-  npm install @types/express @types/node typescript -D
+
+*/
