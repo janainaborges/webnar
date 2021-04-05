@@ -16,8 +16,8 @@ class DataBase{
 
     logger(url){ //colocar algumas respostas na url//
         this.dbconnection = mongoose.connection; //passando a responsabilidade para uma constante//
-        this.createConnection.on('connected', () => console.log("mongoose está conectado") );
-        this.createConnection.on('error', error => console.error.bind(console, "erro na conexão" + error));
+        this.createConnection.on('connected', () => { console.log("mongoose está conectado"); } );
+        this.createConnection.on('error', (error) => console.error.bind( /* console */ "erro na conexão" + error));
     }
 
 }
