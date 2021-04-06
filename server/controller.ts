@@ -59,6 +59,21 @@ class Controller{
         .catch(err => res.status(400).json({'result': err }));
     }
 
+
+    //insert
+
+    createCrush(data){
+        return model.create(data);
+    }
+
+    insert(req, res){
+        const crush = req.body;
+
+        this.createCrush(crush)
+        .then(crushs => res.status(200).json({'result': crushs}))
+        .catch(err => res.status(400).json({'result': err }));
+    }
+
     
 }
 
