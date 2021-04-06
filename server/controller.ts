@@ -17,16 +17,49 @@ class Controller{
 
     //sectioOne
     getCrushsById(id){
+        return model.find(id);
+    }
 
+    selectOne(req, res){
+        const id = { _id: req.params.id}
 
-        const id = { id: req.params.id}
-
-                return model.find(id);
-        this.getCrushs()
+        this.getCrushsById(id)
         .then(crushs => res.status(200).json({'result': crushs}))
         .catch(err => res.status(400).json({'result': err }));
     }
 
+
+
+
+     //delete
+     deleteById(id){
+        return model.deleteOne(id);
+    }
+
+    delete(req, res){
+        const id = { _id: req.params.id}
+
+        this.deleteById(id)
+        .then(crushs => res.status(200).json({'result': crushs}))
+        .catch(err => res.status(400).json({'result': err }));
+    }
+
+
+       //update
+       updateCrush(id, data){
+        return model.findOneAndUpdate(id, data);
+    }
+
+    update(req, res){
+        const id = { _id: req.params.id}
+        const crush = req.body;
+
+        this.deleteById(id)
+        .then(crushs => res.status(200).json({'result': crushs}))
+        .catch(err => res.status(400).json({'result': err }));
+    }
+
+    
 }
 
 export default Controller;

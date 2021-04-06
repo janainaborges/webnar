@@ -23,6 +23,7 @@ class App{
         this.app.route('/').get(  (req, res)   => res.status(200).json({"result": "Hello world"}) )
         this.app.route('/api/crushs').get((req, res) => this.controller.select(req, res))
         this.app.route('/api/crushs/:id').get((req, res) => this.controller.selectOne(req, res))
+        this.app.route('/api/crushs/:id').delete((req, res) => this.controller.delete(req, res))
     }
 }
 
